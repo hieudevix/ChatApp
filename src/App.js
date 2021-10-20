@@ -7,16 +7,18 @@ import AuthProvider from './Context/AuthProvider';
 import AppProvider from './Context/AppProvider';
 import AddRoom from './components/Modal/AddRoom/AddRoom';
 import InviteMember from './components/Modal/InviteMember/InviteMember';
+import CovidTracker from './components/CovidTracker/CovidTracker';
 function App() {
   return <BrowserRouter>
     <AuthProvider>
       <AppProvider>
         <Switch>
-          <Route component={Login} path="/login" />
-          <Route component={ChatRoom} path="/" />
+          <Route exact component={Login} path="/login" />
+          <Route exact component={ChatRoom} path="/" />
+          <Route exact component={CovidTracker} path="/covid" />
         </Switch>
-        <AddRoom/>
-        <InviteMember/>
+        <AddRoom />
+        <InviteMember />
       </AppProvider>
     </AuthProvider>
   </BrowserRouter>

@@ -3,7 +3,7 @@ import { Row, Col, Button } from 'antd';
 import Title from 'antd/lib/typography/Title';
 // import firebase, { auth, db } from '../FireBase/config';
 import firebase, { auth, db } from '../../firebase/config'
-import { useHistory } from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 import { addDocument, generateKeywords } from '../../firebase/services';
 
 const fbProvider = new firebase.auth.FacebookAuthProvider();
@@ -37,6 +37,12 @@ export default function Login() {
                     <Button type="primary" onClick={handleFbLogin} style={{ width: '100%', marginBottom: '5px' }}>
                         Login by Facebook
                     </Button>
+                    <NavLink to="/covid">
+                        <Button style={{ width: '100%', marginBottom: '5px' }}>
+                            Thống Kê Covid
+                        </Button>
+                    </NavLink>
+
                 </Col>
             </Row>
         </div>
